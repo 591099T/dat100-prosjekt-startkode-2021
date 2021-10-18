@@ -53,7 +53,7 @@ public class KortSamling {
 		
 		// TODO - START
 		return this.samling.length;
-		int antall = 
+		
 		
 		
 		
