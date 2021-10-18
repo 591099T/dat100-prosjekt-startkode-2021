@@ -23,6 +23,7 @@ public class KortSamling {
 	public KortSamling() {
 		
 		// TODO - START
+		antall = 0;
 		samling = new Kort[ MAKS_KORT ];
 		
 		// TODO - END
@@ -52,6 +53,7 @@ public class KortSamling {
 		
 		// TODO - START
 		return this.samling.length;
+		int antall = 
 		
 		
 		
@@ -66,7 +68,7 @@ public class KortSamling {
 	public boolean erTom() {
 		
 		// TODO - START
-		return this.samling.length;
+		return this.samling.erTom();
 				
 		
 		
@@ -205,6 +207,7 @@ public class KortSamling {
 	public Kort[] getAllekort() {
 		
 		// TODO - START
+		//opprette ny 
 		
 		throw new UnsupportedOperationException(TODO.method());
 
