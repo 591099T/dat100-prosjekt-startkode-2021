@@ -50,6 +50,13 @@ public class KortUtils {
 	public static void stokk(KortSamling samling) {
 		// TODO - START
 		
+		Random rand = new Random();
+		for (int i = 0; i < samling; i++) {
+			int r = i + rand.nextInt(samling - i);
+			int temp = KortSamling[r];
+			KortSamling[r] = KortSamling[i];
+			KortSamling[i] = temp;
+		}
 		
 		
 		
