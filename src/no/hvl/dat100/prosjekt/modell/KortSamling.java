@@ -52,9 +52,7 @@ public class KortSamling {
 	public int getAntalKort() {
 		
 		// TODO - START
-		return this.samling.length;
-		
-		
+		return antall;
 		
 		
 		// TODO - END
@@ -98,8 +96,7 @@ public class KortSamling {
 	 */
 	public void leggTilAlle() {
 		
-		// TODO - START
-		// Husk: bruk Regler.MAKS_KORT_FARGE for å få antall kort per farge
+		
 		fjernAlle();
 		this.antall = 0;
 		for (Kortfarge f:Kortfarge.values()) {
@@ -110,7 +107,7 @@ public class KortSamling {
 			}
 		}
 		
-		// TODO - END
+		
 	}
 
 	/**
@@ -118,12 +115,12 @@ public class KortSamling {
 	 */
 	public void fjernAlle() {
 		
-		// TODO - START
+		
 		
 		this.antall = 0;
 		this.samling = new Kort[MAKS_KORT];
 		
-		// TODO - END
+		
 	}
 	
 	/**
