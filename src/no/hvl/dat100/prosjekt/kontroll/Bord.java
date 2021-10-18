@@ -23,11 +23,11 @@ public class Bord {
 	public Bord() {
 		
 		// TODO - START
+		
 		int a = 52;
 		
 		bunkeFra = new KortSamling(a);
 		bunkeTil = new KortSamling();
-		
 		// TODO - END
 	}
 	
@@ -58,13 +58,13 @@ public class Bord {
 	 * 
 	 * @return true om til-bunken er tom, false ellers.
 	 */
-	public boolean bunketilTom() {
+	public boolean bunkeTilTom() {
 		
 		// TODO - START
-		if (int )
-			this.GetAntallKort;
 				
-		throw new UnsupportedOperationException(TODO.method());
+		if (bunkeTil=>0) {
+			return false;
+		}	else return true;
 
 		// TODO - END
 	}
@@ -74,12 +74,14 @@ public class Bord {
 	 * 
 	 * @return true om fra-bunken er tom, false ellers.
 	 */
-	public boolean bunkefraTom() {
+	public boolean bunkeFraTom() {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
-	
+		if (bunkeFra=>0) {
+			return false;
+		}	else return true;
+
 		// TODO - END
 		
 	}
@@ -92,8 +94,11 @@ public class Bord {
 	public int antallBunkeFra() {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		int fra;
+		for (int i = 0; i < 5; i++){
+	            return i;
+	        }
+	    
 
 		// TODO - END
 	}
@@ -106,8 +111,10 @@ public class Bord {
 	public int antallBunkeTil() {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		int til;
+		for(int j = 2; j< 5; j++){
+		return j;
+		}
 
 		// TODO - END
 	}

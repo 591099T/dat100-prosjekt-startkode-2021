@@ -22,11 +22,10 @@ public class KortSamling {
 	 */
 	public KortSamling() {
 		
-		// TODO - START
 		antall = 0;
 		samling = new Kort[ MAKS_KORT ];
 		
-		// TODO - END
+
 	}
 
 	/**
@@ -51,11 +50,9 @@ public class KortSamling {
 	 */
 	public int getAntalKort() {
 		
-		// TODO - START
-		return antall;
+		return antall;	
 		
-		
-		// TODO - END
+	
 	}
 	
 	/**
@@ -65,16 +62,17 @@ public class KortSamling {
 	 */
 	public boolean erTom() {
 		
-		// TODO - START
-		boolean samling;
-		if(samling==true) {
-		return true;}	
-		else 
-		return false;
-				
-		
-		
-		// TODO - END
+		 if (antall == 0) {
+	            return true;
+	        } else {
+	            return false;
+	        }
+//		boolean samling;
+//		if(samling==true) {
+//		return true;}	
+//		else 
+//		return false;			
+	
 	}
 
 	/**
@@ -85,13 +83,15 @@ public class KortSamling {
 	 */
 	public void leggTil(Kort kort) {
 		
-		// TODO - START
-		this.samling = samling + kort;
+		samling[antall] = kort;
+        antall++;
+
+//		this.samling = samling + kort;
+//		
+//		return samling;
 		
-		return samling;
 		
 		
-		// TODO - END
 		
 	}
 	
@@ -136,13 +136,16 @@ public class KortSamling {
 	 */
 	public Kort seSiste() {
 		
-		// TODO - START
+		for (int i = samling.length-1; i >= 0; i--) {
+            if (samling[i] != null) {
+                return samling [i];
+            }
+        }
+        return null;
 		
-		if (samling>0) {
-			return Kort;
-		}
-
-		// TODO - END
+//		if (samling>0) {
+//			return Kort;
+//		}
 		
 	}
 
@@ -168,19 +171,18 @@ public class KortSamling {
 	 */
 	public boolean har(Kort kort) {
 		
-		// TODO - START
-		int i = 0;
-		while(i < antall) {
-			if(kort.equals(samling[i])) {
-				return true;
-			}
-			i++;
-		}
-		return false;
-		
-		
-		// return false;
-		// TODO - END
+		 boolean resultat = Arrays.asList(samling).contains(kort);
+	        return resultat;
+//		int i = 0;
+//		while(i < antall) {
+//			if(kort.equals(samling[i])) {
+//				return true;
+//			}
+//			i++;
+//		}
+//		return false;
+//		
+		// return false;	
 		
 	}
 
@@ -195,13 +197,18 @@ public class KortSamling {
 	 */
 			 
 	public boolean fjern(Kort kort) {
-		
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - END
-	}
+        for (int i = 0; i < samling.length; i++) {
+            if (kort == null) {
+                return false;
+            }
+            if (samling[i] == kort) {
+                samling[i] = null;
+                antall--;
+                return true;
+            }
+        }
+        return false;
+    }
 
 	/**
 	 * Gir kortene som en tabell av samme lengde som antall kort i samlingen
