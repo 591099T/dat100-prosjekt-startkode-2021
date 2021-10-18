@@ -22,9 +22,22 @@ public class KortUtils {
 		// TODO - START
 		
 		//skal sortere samling med compareTo() fra Kort
+		KortSamling kort = samling;
+		int[] nyetall = new int[kort.length];
 		
+		for (int kortNr = 0; kortNr < kort.length; kortNr++) {
+			int minPos = 0; 
+			for (int posNr = 1; posNr < kort.length; posNr++) {
+				minPos = posNr;
+			}
+			nyeKort[kortNr] = kort[minPos];
+			kort[minPos] = Integer.MAX_VALUE;
+		}
+		kort = nyeKort;
 		
-		throw new UnsupportedOperationException(TODO.method());
+		//this.compareTo();
+		
+	
 		// TODO - END
 	}
 	
