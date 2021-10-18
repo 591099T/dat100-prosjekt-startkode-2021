@@ -40,7 +40,7 @@ public class KortSamling {
 	 */
 	public Kort[] getSamling() {
 		
-		return samling;
+		return this.samling;
 		
 	}
 	
@@ -100,10 +100,12 @@ public class KortSamling {
 		
 		// TODO - START
 		// Husk: bruk Regler.MAKS_KORT_FARGE for å få antall kort per farge
-		
+		fjernAlle();
+		this.antall = 0;
 		for (Kortfarge f:Kortfarge.values()) {
 			for (int i = 1; i <= Regler.MAKS_KORT_FARGE; i++) {
-				samling[i-1] = new Kort(f,i);
+				Kort nyttKort = new Kort (f, i);
+				samling[this.antall] = nyttKort;
 				antall++;
 			}
 		}
@@ -118,8 +120,9 @@ public class KortSamling {
 		
 		// TODO - START
 		
+		this.antall = 0;
+		this.samling = new Kort[MAKS_KORT];
 		
-		throw new UnsupportedOperationException(TODO.method());
 		// TODO - END
 	}
 	
