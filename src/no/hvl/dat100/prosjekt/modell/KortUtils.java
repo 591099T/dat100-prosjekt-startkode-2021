@@ -21,6 +21,9 @@ public class KortUtils {
 		
 		// TODO - START
 		
+		//skal sortere samling med compareTo() fra Kort
+		
+		
 		throw new UnsupportedOperationException(TODO.method());
 		// TODO - END
 	}
@@ -32,8 +35,12 @@ public class KortUtils {
 	 * 			samling av kort som skal stokkes. 
 	 */
 	public static void stokk(KortSamling samling) {
-		
 		// TODO - START
+		
+		
+		
+		
+		
 //		for(int i = 0; i < .; i++) {
 //			int j = (int)(Math.random() * .);
 //			int temp = deck[i];
@@ -52,14 +59,14 @@ public class KortUtils {
 //            stokkaKort.add(kort.remove(index));
 //        }
 		
-		int index, temp;
-		Stokking stokking = new Stokking();
-		for (int i = samling.length - 1; i > 0; i--) {
-			index = stokking.nextInt(i + 1);
-			temp = samling[index];
-			samling[index] = samling[i];
-			samling[i] = temp;
-		}
+//		int index, temp;
+//		Stokking stokking = new Stokking();
+//		for (int i = samling.length - 1; i > 0; i--) {
+//			index = stokking.nextInt(i + 1);
+//			temp = samling[index];
+//			samling[index] = samling[i];
+//			samling[i] = temp;
+//		}
 
 		
 		

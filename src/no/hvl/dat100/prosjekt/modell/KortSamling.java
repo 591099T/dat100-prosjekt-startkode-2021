@@ -66,7 +66,11 @@ public class KortSamling {
 	public boolean erTom() {
 		
 		// TODO - START
-		return this.samling.erTom();
+		boolean samling;
+		if(samling==true) {
+		return true;}	
+		else 
+		return false;
 				
 		
 		
@@ -82,8 +86,9 @@ public class KortSamling {
 	public void leggTil(Kort kort) {
 		
 		// TODO - START
+		this.samling = samling + kort;
 		
-		this.Kort.push(kort);
+		return samling;
 		
 		
 		// TODO - END
@@ -133,7 +138,9 @@ public class KortSamling {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		if (samling>0) {
+			return Kort;
+		}
 
 		// TODO - END
 		
@@ -147,11 +154,9 @@ public class KortSamling {
 	 */
 	public Kort taSiste() {
 		
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO - END
+		while (samling==false) {
+			return null;
+		}
 	}
 	
 	/**
@@ -202,14 +207,14 @@ public class KortSamling {
 	 * Gir kortene som en tabell av samme lengde som antall kort i samlingen
 	 * 
 	 * @return tabell av kort som er i samlingen, der kort skal ha samme rekkefølge
-	 *         som i kortsamlinga.
+	 *         som i kortsamlinga. asdasd
 	 */
 	public Kort[] getAllekort() {
 		
 		// TODO - START
 		//opprette ny 
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return this.MAKS_KORT;
 
 		// TODO - END
 	
