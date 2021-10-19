@@ -19,26 +19,32 @@ public class KortUtils {
 	
 	public static void sorter(KortSamling samling) {
 		
-		// TODO - START
 		
 		//skal sortere samling med compareTo() fra Kort
-		KortSamling kort = samling;
-		int[] nyetall = new int[kort.length];
+//		KortSamling kort = samling;
+//		int[] nyetall = new int[kort.length];
+//		
+//		for (int kortNr = 0; kortNr < kort.length; kortNr++) {
+//			int minPos = 0; 
+//			for (int posNr = 1; posNr < kort.length; posNr++) {
+//				minPos = posNr;
+//			}
+//			nyeKort[kortNr] = kort[minPos];
+//			kort[minPos] = Integer.MAX_VALUE;
+//		}
+//		kort = nyeKort;
 		
-		for (int kortNr = 0; kortNr < kort.length; kortNr++) {
-			int minPos = 0; 
-			for (int posNr = 1; posNr < kort.length; posNr++) {
-				minPos = posNr;
-			}
-			nyeKort[kortNr] = kort[minPos];
-			kort[minPos] = Integer.MAX_VALUE;
-		}
-		kort = nyeKort;
+		for (int i = 0; i < samling.size() - 1; i++) {
+	        for (int k = i + 1; k > 0; k--) {
+	            final Kort kort1 = samling.getCards().get(k);
+	            final Kort kort2 = samling.getCards().get(k - 1);
+	            if(kort.compare(kort1, kort2) < 0) {
+	                swap(samling, k, k-1);
+	            } else {
+	                break;
+	            }
+	        }
 		
-		//this.compareTo();
-		
-	
-		// TODO - END
 	}
 	
 	/**
@@ -89,11 +95,7 @@ public class KortUtils {
 //		}
 
 		
-		
-		
-		
-		
-		// TODO - END
+	
 	}
 	
 }

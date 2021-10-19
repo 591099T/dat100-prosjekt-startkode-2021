@@ -30,7 +30,11 @@ public class Spill {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.constructor("Spill"));
+		bord = new Bord();
+		nord = new Spiller(Spillere.NORD);
+		nord = new Spiller(Spillere.SYD);
+		
+		
 		// TODO - END
 		
 	}
