@@ -220,8 +220,8 @@ public class KortSamling {
 		
 		// TODO - START
 		//opprette ny 
-		int[] =
-		return this.MAKS_KORT;
+		int reserve[] = kort[];
+		//return this.MAKS_KORT;
 
 		// TODO - END
 	
