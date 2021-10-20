@@ -19,32 +19,41 @@ public class KortUtils {
 	
 	public static void sorter(KortSamling samling) {
 		
+		Kort[] nysamling = samling.getAllekort();
+		for (int i = 0; i < nysamling.length - 1; i++) {
+			Kort v = nysamling[i];
+			Kort b = nysamling[i + 1];
+			int x = v.compareTo(b);
+			if(x == 0) {
+				nysamling[i] = v;
+				nysamling[i +1] = b;
+			}
+			if(x < 0) {
+				nysamling[i] =v;
+				nysamling[i + 1] = v;
+			}
+			if(x > 0) {
+				nysamling[i] = b;
+				nysamling[i + 1] = v;
+			}
+		}
+		if (samling.getAntalKort() == 0) {
+			samling.setAntall(0);
+		}if (samling.getAntalKort() != true) samling.setSamling(nysamling);
 		
 		//skal sortere samling med compareTo() fra Kort
-//		KortSamling kort = samling;
-//		int[] nyetall = new int[kort.length];
+		
+//		for (int i = 0; i < samling.size() - 1; i++) {
+//	        for (int k = i + 1; k > 0; k--) {
+//	            final Kort kort1 = samling.getCards().get(k);
+//	            final Kort kort2 = samling.getCards().get(k - 1);
+//	            if(kort.compare(kort1, kort2) < 0) {
+//	                swap(samling, k, k-1);
+//	            } else {
+//	                break;
+//	            }
+//	        }
 //		
-//		for (int kortNr = 0; kortNr < kort.length; kortNr++) {
-//			int minPos = 0; 
-//			for (int posNr = 1; posNr < kort.length; posNr++) {
-//				minPos = posNr;
-//			}
-//			nyeKort[kortNr] = kort[minPos];
-//			kort[minPos] = Integer.MAX_VALUE;
-//		}
-//		kort = nyeKort;
-		
-		for (int i = 0; i < samling.size() - 1; i++) {
-	        for (int k = i + 1; k > 0; k--) {
-	            final Kort kort1 = samling.getCards().get(k);
-	            final Kort kort2 = samling.getCards().get(k - 1);
-	            if(kort.compare(kort1, kort2) < 0) {
-	                swap(samling, k, k-1);
-	            } else {
-	                break;
-	            }
-	        }
-		
 	}
 	
 	/**
@@ -54,15 +63,23 @@ public class KortUtils {
 	 * 			samling av kort som skal stokkes. 
 	 */
 	public static void stokk(KortSamling samling) {
-		// TODO - START
 		
-		Random rand = new Random();
-		for (int i = 0; i < samling; i++) {
-			int r = i + rand.nextInt(samling - i);
-			int temp = KortSamling[r];
-			KortSamling[r] = KortSamling[i];
-			KortSamling[i] = temp;
+		Random random = new Random();
+		for(int i = samling.getSamling().length - 1; i > 0; i++) {
+			int a = random.nextInt(i);
+			Kort temp = samling.getSamling()[i];
+			samling.getSamling()[i] = samling.getSamling()[a];
+			samling.getSamling()[a] = temp;
 		}
+		
+		
+//		Random rand = new Random();
+//		for (int i = 0; i < samling; i++) {
+//			int r = i + rand.nextInt(samling - i);
+//			int temp = KortSamling[r];
+//			KortSamling[r] = KortSamling[i];
+//			KortSamling[i] = temp;
+//		}
 		
 		
 		
@@ -94,8 +111,6 @@ public class KortUtils {
 //			samling[i] = temp;
 //		}
 
-		
-	
 	}
 	
 }

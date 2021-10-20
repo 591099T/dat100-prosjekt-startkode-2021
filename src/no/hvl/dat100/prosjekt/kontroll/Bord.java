@@ -3,6 +3,7 @@ package no.hvl.dat100.prosjekt.kontroll;
 import no.hvl.dat100.prosjekt.modell.KortSamling;
 import no.hvl.dat100.prosjekt.modell.KortUtils;
 import no.hvl.dat100.prosjekt.TODO;
+import no.hvl.dat100.prosjekt.kontroll.dommer.Regler;
 import no.hvl.dat100.prosjekt.modell.Kort;
 
 /**
@@ -24,10 +25,11 @@ public class Bord {
 		
 		// TODO - START
 		
-		int a = 52;
-		
-		bunkeFra = new KortSamling(a);
+		bunkeFra = new KortSamling();
 		bunkeTil = new KortSamling();
+		bunkeFra.leggTilAlle();
+		bunkeTil.setSamling(new Kort[4*Regler.MAKS_KORT_FARGE]);
+		
 		// TODO - END
 	}
 	
@@ -61,10 +63,14 @@ public class Bord {
 	public boolean bunkeTilTom() {
 		
 		// TODO - START
-				
-		if (bunkeTil=>0) {
-			return false;
-		}	else return true;
+		boolean a = false;
+		if(bunkeTil.erTom() == true)
+			a = true;
+		return a;
+//				
+//		if (bunkeTil=>0) {
+//			return false;
+//		}	else return true;
 
 		// TODO - END
 	}
@@ -74,13 +80,17 @@ public class Bord {
 	 * 
 	 * @return true om fra-bunken er tom, false ellers.
 	 */
-	public boolean bunkeFraTom() {
+	public boolean bunkefraTom() {
 		
 		// TODO - START
+		boolean a = false;
+		if(bunkeFra.erTom() == true)
+			a = true;
+		return a;
 		
-		if (bunkeFra=>0) {
-			return false;
-		}	else return true;
+//		if (bunkeFra=>0) {
+//			return false;
+//		}	else return true;
 
 		// TODO - END
 		
@@ -94,11 +104,13 @@ public class Bord {
 	public int antallBunkeFra() {
 		
 		// TODO - START
-		int fra;
-		for (int i = 0; i < 5; i++){
-	            return i;
-	        }
-	    
+		int x = bunkeFra.getAntalKort();
+		return x;
+//		int fra;
+//		for (int i = 0; i < 5; i++){
+//	            return i;
+//	        }
+//	    
 
 		// TODO - END
 	}
@@ -111,10 +123,12 @@ public class Bord {
 	public int antallBunkeTil() {
 		
 		// TODO - START
-		int til;
-		for(int j = 2; j< 5; j++){
-		return j;
-		}
+		int x = bunkeTil.getAntalKort();
+		return x;
+//		int til;
+//		for(int j = 2; j< 5; j++){
+//		return j;
+//		}
 
 		// TODO - END
 	}
@@ -140,12 +154,11 @@ public class Bord {
 	
 	public Kort taOversteFraBunke() {
 		
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - END
-	}
+		Kort[] samling = bunkeFra.getAllekort();
+		Kort v = samling[samling.length - 1];
+		bunkeFra.fjern(v);
+		return v;
+	} 
 	
 	/**
 	 * Metode som leser øverste kortet i til-bunken. Kortet vil fremdeles være
@@ -155,11 +168,7 @@ public class Bord {
 	 */
 	public Kort seOversteBunkeTil() {
 		
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO - END
+		return bunkeTil.seSiste();
 	}
 	
 	/**

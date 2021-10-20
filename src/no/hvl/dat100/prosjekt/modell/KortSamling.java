@@ -156,10 +156,14 @@ public class KortSamling {
 	 *         null.
 	 */
 	public Kort taSiste() {
-		
-		while (samling==false) {
-			return null;
+		Kort kort = null;
+		if (antall != 0) {
+			kort = samling[antall - 1];
+			antall--;
 		}
+		return kort;
+		
+		
 	}
 	
 	/**
@@ -171,7 +175,14 @@ public class KortSamling {
 	 */
 	public boolean har(Kort kort) {
 		
-		 boolean resultat = Arrays.asList(samling).contains(kort);
+		 boolean resultat = false;
+		 int i = 0;
+		 while(!resultat && i < antall) {
+			 if(samling[i].equals(kort)) {
+				 resultat = true;
+			 }
+			 i++;
+		 }
 	        return resultat;
 //		int i = 0;
 //		while(i < antall) {
@@ -218,12 +229,14 @@ public class KortSamling {
 	 */
 	public Kort[] getAllekort() {
 		
-		// TODO - START
-		//opprette ny 
-		int reserve[] = kort[];
-		//return this.MAKS_KORT;
+		
+		Kort[] tabell = new Kort[antall];
+		for(int i = 0; i < antall; i++) {
+			tabell[i] = samling[i];
+		}
+		return tabell;
 
-		// TODO - END
+		
 	
 	}
 	
