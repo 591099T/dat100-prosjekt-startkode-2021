@@ -34,8 +34,9 @@ public abstract class Spiller implements ISpiller {
 	public Spiller() {
 		
 		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.constructor("Spiller"));
+		spiller = Spillere.INGEN;
+		hand = new KortSamling();
+		antalltrekk = 0;
 		// TODO - END
 	}
 
@@ -50,7 +51,8 @@ public abstract class Spiller implements ISpiller {
 		
 		// TODO - START
 
-		throw new UnsupportedOperationException(TODO.constructor("Spiller"));
+		hand = new KortSamling();
+		antalltrekk = 0;
 		// TODO - END
 	}
 
@@ -58,7 +60,7 @@ public abstract class Spiller implements ISpiller {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return hand.getAntalKort();
 
 		// TODO - END
 	}
@@ -67,7 +69,7 @@ public abstract class Spiller implements ISpiller {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return hand;
 
 		// TODO - END
 	}
@@ -76,7 +78,7 @@ public abstract class Spiller implements ISpiller {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return antalltrekk;
 
 		// TODO - END
 	}
@@ -85,7 +87,7 @@ public abstract class Spiller implements ISpiller {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return spiller;
 
 		// TODO - END
 		
@@ -95,7 +97,7 @@ public abstract class Spiller implements ISpiller {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		antalltrekk = t;
 		// TODO - END
 	}
 
@@ -112,7 +114,7 @@ public abstract class Spiller implements ISpiller {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		hand.leggTil(kort);
 		// TODO - END
 		
 	}
@@ -121,7 +123,7 @@ public abstract class Spiller implements ISpiller {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		hand.fjern(kort);
 		// TODO - END
 		
 	}
@@ -130,7 +132,7 @@ public abstract class Spiller implements ISpiller {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		hand.fjernAlle();
 		// TODO - END
 	}
 
@@ -138,7 +140,8 @@ public abstract class Spiller implements ISpiller {
 		
 		// TODO - START
 		
-		throw new UnsupportedOperationException(TODO.method());
+		hand.leggTil(kort);
+		antalltrekk++;
 		// TODO - END
 		
 	}

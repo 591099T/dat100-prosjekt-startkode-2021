@@ -60,7 +60,7 @@ public class Bord {
 	 * 
 	 * @return true om til-bunken er tom, false ellers.
 	 */
-	public boolean bunkeTilTom() {
+	public boolean bunketilTom() {
 		
 		// TODO - START
 		boolean a = false;

@@ -39,7 +39,7 @@ public class KortUtils {
 		}
 		if (samling.getAntalKort() == 0) {
 			samling.setAntall(0);
-		}if (samling.getAntalKort() != true) samling.setSamling(nysamling);
+		}if (samling.erTom() != true) samling.setSamling(nysamling);
 		
 		//skal sortere samling med compareTo() fra Kort
 		

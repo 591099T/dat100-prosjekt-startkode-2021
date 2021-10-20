@@ -94,10 +94,12 @@ public class Spill {
 	 */
 	public void start() {
 		
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-		// TODO - END
+		ISpiller spillernord = nord;
+		Ispiller spillersyd = syd;
+		Kort bordspill = bord;
+		delutKort();
+		Kort v = bordspill.getBunkeFra().taSiste();
+		bordspill.getBunkeTil().leggTil(v);
 	}
 
 	/**
@@ -179,11 +181,7 @@ public class Spill {
 	 */
 	public void forbiSpiller(ISpiller spiller) {
 		
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.method());
-	
-		// TODO - END
+		spiller.setAntallTrekk(0);
 	}
 
 	/**
@@ -206,7 +204,13 @@ public class Spill {
 		// om noen andre private metoder i klassen kan brukes
 		// til å implementere denne metoden
 				
-		throw new UnsupportedOperationException(TODO.method());
+		if(!spiller.erferdig()) {
+			switch(handling.getType()) {
+			case TREKK: kort = trekkFraBunke(spiller); break;
+			case FORBI: forbiSpiller(spiller); break;
+			case LEGGNED: kort = handling.getKort(); leggnedKort(spiller,kort);
+			}
+		}
 
 		// TODO - END
 	}
